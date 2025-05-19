@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Feedback Saver</title>
+	</head>
+	<body>
+		<h2>Submit Feedback</h2>
+		<form method="POST">
+			<label>Name:</label><br>
+			<input type="text" name="name" required><br>
+
+			<label>Message:</label><br>
+			<textarea name="message" rows="4" cols="40" required></textarea><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+
+		<hr>
+		<h3>Previous Feedback</h3>
+		{% for entry in feedback_list %}
+			<p><strong>{{ entry.name }}:</strong> {{ entry.message  }}</p>
+		{% else %}
+			<p>No Feedback submitted yet.</p>
+		{% endfor %}
+	</body>
+
+</html>
